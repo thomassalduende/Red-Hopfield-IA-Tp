@@ -42,13 +42,6 @@ La red de Hopfield es un modelo de red neuronal recurrente que se utiliza para a
 
 Este programa es una implementación simple de una red de Hopfield y puede ser mejorado y extendido en muchos aspectos. Si tienes alguna pregunta, comentario o sugerencia, no dudes en ponerte en contacto con los integrantes del grupo.
 
-## Licencia
-
-Este programa es de código abierto y se distribuye bajo la licencia MIT. Puedes consultar el archivo `LICENSE` para más detalles.
-
-
-
-
 
 ## Informe de Corridas y Evaluación de Resultados
 
