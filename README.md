@@ -26,7 +26,7 @@ Siga estos pasos para utilizar el programa:
 
 5. La red de Hopfield se entrenará con los datos del archivo CSV seleccionado y le permitirá realizar consultas.
 
-6. Después de cada corrida, el resultado se guardará en un archivo CSV llamado `salida.csv`.
+6. Después de cada corrida, el resultado se guardará en el directorio `results` en archivos CSV llamados `salida.csv`.
 
 ## Presentación de la Red de Hopfield
 

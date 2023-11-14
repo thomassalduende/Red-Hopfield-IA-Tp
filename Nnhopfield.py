@@ -43,6 +43,10 @@ class HopfieldNetwork:
 if __name__ == "__main__":
     print("Bienvenido al programa de la red de Hopfield")
 
+    results_folder = 'results'
+    if not os.path.exists(results_folder):
+        os.makedirs(results_folder)
+
     while True:
         choice = input("¿Desea ejecutar el programa con la red de Hopfield? (si/no): ").strip().lower()
         if choice == "si":
@@ -86,11 +90,18 @@ if __name__ == "__main__":
                 # Reemplaza esto con tu patrón de entrada
                 output_pattern = hopfield_net.update(input_pattern)
 
-                # Guardar el patrón de salida en un archivo CSV
-                output_data = pd.DataFrame(output_pattern.reshape(1, -1).astype(int), columns=data.columns)
-                output_data.to_csv('salida.csv', index=False)
+                # Generar un nombre único para el archivo de salida dentro de la carpeta 'results'
+                output_filename = os.path.join(results_folder, 'salida.csv')
+                count = 1
+                while os.path.exists(output_filename):
+                    output_filename = os.path.join(results_folder, f'salida{count}.csv')
+                    count += 1
 
-                print("Resultado guardado en 'salida.csv'")
+                # Guardar el patrón de salida en un archivo CSV dentro de la carpeta 'results'
+                output_data = pd.DataFrame(output_pattern.reshape(1, -1).astype(int), columns=data.columns)
+                output_data.to_csv(output_filename, index=False)
+
+                print(f"Resultado guardado en '{output_filename}'")
             except Exception as e:
                 print("Error: Se produjo un error durante la corrida. Detalles del error:")
                 print(e)
